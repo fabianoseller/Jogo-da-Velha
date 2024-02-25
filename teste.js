@@ -7,6 +7,7 @@ var atual;			// ponteiro para o nodo que representa o estado atual do jogo
 var pilha = []; // array de ponteiros para nodo - usada para construir a �rvore
 var nodos = 0;	// nodos na �rvore
 
+/* validação de campos
 /* objeto nodo: 
 
 	{ pai: ponteiro para nodo,
