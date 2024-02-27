@@ -2,16 +2,33 @@ const currentPlayer = document.querySelector(".currentPlayer");
 let selecionado;
 let player = "X";
 
+// exemplo incorreto
+// const posicao = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+//   [1, 4, 7],
+//   [2, 5, 8],
+//   [3, 6, 9],
+//   [1, 5, 9],
+//   [3, 5, 7],
+// ];
+
 const posicao = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+  [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
-  [3, 6, 9],
-  [1, 5, 9],
-  [3, 5, 7],
 ];
+
+//ordem de matriz
+// [{0, 1, 2},
+//  {3, 4, 5},
+//  {6, 7, 8}]
 
 function init() {
   selecionado = new Array(9).fill(null);
@@ -24,7 +41,7 @@ function init() {
 }
 
 function newMove(e) {
-  const index = parseInt(e.target.dataset.i);
+  const index = parseInt(e.target.dataset.posicao);
   e.target.textContent = player;
   e.target.removeEventListener("click", newMove);
   selecionado[index] = player;
@@ -38,9 +55,9 @@ function newMove(e) {
 function check() {
   const playerLastMove = player === "X" ? "O" : "X";
   
-  for (const pos of posicao
-) {
-    if (pos.every((item) => selecionado[item - 1] === playerLastMove)) {
+  for (const pos of posicao) {
+    console.log("pos: ", pos)
+    if (pos.every((item) => selecionado[item] === playerLastMove)) {
       alert(`O JOGADOR '${playerLastMove}' GANHOU!`);
       init();
       return;
