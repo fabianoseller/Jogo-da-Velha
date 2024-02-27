@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentação do Código JavaScript</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+code {
+    background-color: #f4f4f4;
+    padding: 5px;
+}
+</style>
+<link rel="stylesheet" href="docu.css">
+</head>
+<body>
+
+<h1>Documentação do Código JavaScript</h1>
+
+<b>***|UTLIZADO EXEMPLOS WEB DE DOCUMENTAÇÃO|***</b>
+
+<h2>Introdução</h2>
+<p>Este documento fornece uma visão geral das funções e comportamentos utilizados do código JS. O código implementa um jogo da velha - TRABALHO SENAC TECH RS -  em uma página da web.</p>
+
+<h2>Variáveis Globais</h2>
+<ul>
+    <li><code>currentPlayer</code>: Uma referência ao elemento HTML que exibe qual jogador deve fazer o próximo movimento.</li>
+    <li><code>selected</code>: Um array que armazena as seleções dos jogadores no tabuleiro.</li>
+    <li><code>player</code>: Uma string indicando qual jogador deve fazer o próximo movimento.</li>
+    <li><code>positions</code>: Uma matriz que define todas as combinações vencedoras possíveis no jogo da velha.</li>
+</ul>
+
+<h2>Funções</h2>
+
+<h3><code>init()</code></h3>
+<p><strong>Descrição:</strong> Inicializa o jogo da velha.</p>
+<p><strong>Comportamento:</strong></p>
+<ul>
+    <li>Define <code>selected</code> como um array de 9 elementos, inicialmente preenchido com <code>null</code>.</li>
+    <li>Atualiza o texto do elemento <code>currentPlayer</code> para indicar qual jogador deve fazer o próximo movimento.</li>
+    <li>Remove todos os eventos de clique dos botões do jogo e os limpa.</li>
+    <li>Adiciona um evento de clique a cada botão do jogo, ligando-os à função <code>newMove()</code>.</li>
+</ul>
+
+<h3><code>newMove(e)</code></h3>
+<p><strong>Descrição:</strong> Lida com o evento de clique em um botão do jogo.</p>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+    <li><code>e</code>: O evento de clique.</li>
+</ul>
+<p><strong>Comportamento:</strong></p>
+<ul>
+    <li>Obtém o índice do botão clicado.</li>
+    <li>Atualiza o texto do botão clicado com o símbolo do jogador atual.</li>
+    <li>Remove o evento de clique do botão clicado.</li>
+    <li>Registra a seleção do jogador no array <code>selected</code>.</li>
+    <li>Aguarda 100ms e, em seguida, verifica se houve um vencedor ou empate.</li>
+    <li>Altera o jogador atual.</li>
+    <li>Atualiza o texto do elemento <code>currentPlayer</code> para refletir o próximo jogador.</li>
+</ul>
+
+<h3><code>check()</code></h3>
+<p><strong>Descrição:</strong> Verifica se há um vencedor ou empate no jogo.</p>
+<p><strong>Comportamento:</strong></p>
+<ul>
+    <li>Itera sobre todas as posições vencedoras possíveis.</li>
+    <li>Verifica se o jogador atual preencheu todas as posições de uma combinação vencedora.</li>
+    <li>Se um jogador venceu, exibe um alerta indicando o vencedor e reinicia o jogo.</li>
+    <li>Se não houver vencedor e todos os espaços estiverem preenchidos, exibe um alerta de empate e reinicia o jogo.</li>
+</ul>
+
+<h2>Execução Inicial</h2>
+<p>A função <code>init()</code> é chamada inicialmente para iniciar o jogo da velha.</p>
+
+</body>
+</html>

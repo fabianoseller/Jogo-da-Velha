@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #e5c4c4;
+    background: #463131;
   }
   
   main {
@@ -26,7 +26,7 @@
   hr {
     font-weight: bold;
     height: 3px;
-    background: rgb(235, 180, 180);
+    background: black;
     margin-bottom: 10px;
   }
   
