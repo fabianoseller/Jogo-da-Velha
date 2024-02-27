@@ -17,7 +17,7 @@ let positions = [
 function init() {
   selected = [];
 
-  currentPlayer.innerHTML = `JOGADOR DA VEZ: ${player}`;
+  currentPlayer.innerHTML = `JOGADOR DA RODADA: ${player}`;
 
   document.querySelectorAll(".game button").forEach((item) => {
     item.innerHTML = "";
@@ -38,7 +38,7 @@ function newMove(e) {
   }, [100]);
 
   player = player === "X" ? "O" : "X";
-  currentPlayer.innerHTML = `JOGADOR DA VEZ: ${player}`;
+  currentPlayer.innerHTML = `JOGADOR DA RODADA: ${player}`;
 }
 
 function check() {
@@ -51,14 +51,14 @@ function check() {
 
   for (pos of positions) {
     if (pos.every((item) => items.includes(item))) {
-      alert("O JOGADOR '" + playerLastMove + "' GANHOU!");
+      alert("O JOGADOR DA RODADA '" + playerLastMove + "' Se deu!");
       init();
       return;
     }
   }
 
   if (selected.filter((item) => item).length === 9) {
-    alert("DEU EMPATE!");
+    alert("Empate.....jogue novamente!");
     init();
     return;
   }
