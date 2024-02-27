@@ -1,10 +1,3 @@
-[![Build Status](https://app.travis-ci.com/kyriosdata/exemplo.svg)](https://app.travis-ci.com/github/kyriosdata/exemplo)
-![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo&metric=alert_status)
-![Known Vulnerabilities](https://snyk.io/test/github/kyriosdata/exemplo/badge.svg?targetFile=pom.xml)
-
-
-
-
 # Jogo-da-Velha
 
 Definição: Objetivo: Desenvolver um programa em qualquer linguagem de programação, use a que
