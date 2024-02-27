@@ -3,7 +3,7 @@ const currentPlayer = document.querySelector(".currentPlayer");
 let selected;
 let player = "X";
 
-let positions = [
+let posicao = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9],
