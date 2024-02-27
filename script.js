@@ -1,6 +1,6 @@
-const currentjogadorplay = document.querySelector(".currentjogadorplay");
+const currentPlayer = document.querySelector(".currentPlayer");
 let selecionado;
-let jogadorplay = "X";
+let player = "X";
 
 const posicao = [
   [1, 2, 3],
@@ -15,7 +15,7 @@ const posicao = [
 
 function init() {
   selecionado = new Array(9).fill(null);
-  currentjogadorplay.textContent = `JOGADOR DA VEZ: ${jogadorplay}`;
+  currentPlayer.textContent = `JOGADOR DA VEZ: ${player}`;
 
   document.querySelectorAll(".game button").forEach((item) => {
     item.textContent = "";
@@ -25,23 +25,23 @@ function init() {
 
 function newMove(e) {
   const index = parseInt(e.target.dataset.i);
-  e.target.textContent = jogadorplay;
+  e.target.textContent = player;
   e.target.removeEventListener("click", newMove);
-  selecionado[index] = jogadorplay;
+  selecionado[index] = player;
 
   setTimeout(check, 100);
   
-  jogadorplay = jogadorplay === "X" ? "O" : "X";
-  currentjogadorplay.textContent = `Jogador 01: ${jogadorplay}`;
+  player = player === "X" ? "O" : "X";
+  currentPlayer.textContent = `Jogador 01: ${player}`;
 }
 
 function check() {
-  const jogadorplayLastMove = jogadorplay === "X" ? "O" : "X";
+  const playerLastMove = player === "X" ? "O" : "X";
   
   for (const pos of posicao
 ) {
-    if (pos.every((item) => selecionado[item - 1] === jogadorplayLastMove)) {
-      alert(`O Jogador '${jogadorplayLastMove}' Se deu bem!`);
+    if (pos.every((item) => selecionado[item - 1] === playerLastMove)) {
+      alert(`O JOGADOR '${playerLastMove}' GANHOU!`);
       init();
       return;
     }
