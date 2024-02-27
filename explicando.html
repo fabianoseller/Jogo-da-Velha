@@ -47,8 +47,15 @@ code {
     <li>Adiciona um evento de clique a cada botão do jogo, ligando-os à função <code>newMove()</code>.</li>
 </ul>
 
+<ul>
+    <li>As três primeiras submatrizes, representam as três linhas do tabuleiro do jogo, onde cada número representa a posição correspondente na linha.</li>
+        <li>As próximas três submatrizes representam as três colunas do tabuleiro do jogo.</li>
+            <li>Das duas últimas submatrizes, representam as duas diagonais do tabuleiro do jogo.</li>
+                <li>E, então dessas combinações, são usadas na função check(). Verifica se um jogador conseguiu preencher todas as posições em uma dessas combinações. Isso indica que "ele" venceu o joguinho</li>
+</ul>
+
 <h3><code>newMove(e)</code></h3>
-<p><strong>Descrição:</strong> Lida com o evento de clique em um botão do jogo.</p>
+<p><strong>Descrição:</strong> Lida com o "evento" de clique em um botão do jogo.</p>
 <p><strong>Parâmetros:</strong></p>
 <ul>
     <li><code>e</code>: O evento de clique.</li>
@@ -59,7 +66,7 @@ code {
     <li>Atualiza o texto do botão clicado com o símbolo do jogador atual.</li>
     <li>Remove o evento de clique do botão clicado.</li>
     <li>Registra a seleção do jogador no array <code>selected</code>.</li>
-    <li>Aguarda 100ms e, em seguida, verifica se houve um vencedor ou empate.</li>
+    <li>Aguarda 200ms e, em seguida, verifica se houve um vencedor ou empate.</li>
     <li>Altera o jogador atual.</li>
     <li>Atualiza o texto do elemento <code>currentPlayer</code> para refletir o próximo jogador.</li>
 </ul>

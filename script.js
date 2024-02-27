@@ -29,7 +29,7 @@ function newMove(e) {
   e.target.removeEventListener("click", newMove);
   selecionado[index] = player;
 
-  setTimeout(check, 100);
+  setTimeout(check, 200);
   
   player = player === "X" ? "O" : "X";
   currentPlayer.textContent = `Jogador 01: ${player}`;
